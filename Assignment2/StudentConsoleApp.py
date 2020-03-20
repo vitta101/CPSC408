@@ -1,4 +1,3 @@
-# https://stackoverflow.com/questions/60714669/using-the-sql-like-operator-with-tuple-insertion
 # Ananya Vittal
 # 2270341
 import sqlite3
@@ -22,17 +21,17 @@ def one():
     print(df)
 
 
-# b) Create Students - ############################### Fix constraints for Major and Faculty Advisor
+# b) Create Students
 def two():
     while True:
         fname = input('First Name: ')
-        if len(fname.strip()) == 0 or len(fname.strip()) > 32 or not fname.isalpha():
+        if len(fname.strip()) == 0 or len(fname.strip()) > 32 or any(char.isdigit() for char in fname) or not fname.isalpha():
             continue
         else:
             break
     while True:
         lname = input('Last Name: ')
-        if len(lname.strip()) == 0 or len(lname.strip()) > 32 or not lname.isalpha():
+        if len(lname.strip()) == 0 or len(lname.strip()) > 32 or any(char.isdigit() for char in lname) or not lname.isalpha():
             continue
         else:
             break
@@ -45,13 +44,13 @@ def two():
             break
     while True:
         major = input('Major: ')
-        if len(major.strip()) == 0 or len(major.strip()) > 16:
+        if len(major.strip()) == 0 or len(major.strip()) > 16 or any(char.isdigit() for char in major):
             continue
         else:
             break
     while True:
         advisor = input('Faculty Advisor: ')
-        if len(advisor.strip()) == 0 or len(advisor.strip()) > 32:
+        if len(advisor.strip()) == 0 or len(advisor.strip()) > 32 or any(char.isdigit() for char in advisor):
             continue
         else:
             break
