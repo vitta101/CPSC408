@@ -10,6 +10,7 @@ import datetime
 import random
 from random import randint
 
+
 # Database details
 import mysql.connector
 
@@ -21,6 +22,7 @@ db = mysql.connector.connect(
 )
 
 
+# Create headers for csv and make list of classes/deptartments for generator
 def dataGenerator(filename, records):
     headers = ["StudentName", "BirthDate", "Email", "Phone",
                "City", "State", "ZipCode", "Country", "ClassName",
@@ -29,7 +31,7 @@ def dataGenerator(filename, records):
     deptList = ["Crean", "Schmid", "Fowler", "Argyros", "CoPA"]
     generateData(filename, records, headers, classList, deptList)
 
-
+# Generate fake data and export to csv
 def generateData(filename, records, headers, classList, deptList):
     fake = Faker("en_US")
     with open(filename + ".csv", "wt") as csvFile:
@@ -51,7 +53,7 @@ def generateData(filename, records, headers, classList, deptList):
             })
     print("\nGenerated CSV!")
 
-
+# Import data from csv into normalized database
 def dataImporter(filename):
     with open(filename + ".csv", "r") as csv_data:
         reader = csv.reader(csv_data)
@@ -86,7 +88,7 @@ def dataImporter(filename):
     db.close()
     print("\nData imported to database!\n")
 
-
+# Main method that checks for command line parameters
 if __name__ == '__main__':
     if len(sys.argv) == 3:
         filename = sys.argv[1]

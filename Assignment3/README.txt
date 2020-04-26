@@ -11,7 +11,7 @@ Example.csv
 
 Instructions:
 1. Make sure packages for "Faker" and "mysql-connector" are installed
-2. Enter "python Assign3.py test 10" in the command line (the parameters are the file name to be created and the number of tuples to be generated)
+2. Enter "**python Assign3.py test 10**" in the command line (the parameters are the file name to be created and the number of tuples to be generated)
 
 References: 
 https://towardsdatascience.com/generation-of-large-csv-data-using-python-faker-8cfcbedca7a7
