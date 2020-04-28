@@ -5,7 +5,7 @@ CPSC 408-01
 Assignment 3: Data Generator and Importer
 
 INSTRUCTIONS:
-1. Make sure packages for "Faker" and "mysql-connector" are installed
+1. Insert database details (IP address, username, password, etc.)
 2. Enter "python Assign3.py test 10" in the command line (the parameters are the file name to be created and the number of tuples to be generated)
 
 FILES:
